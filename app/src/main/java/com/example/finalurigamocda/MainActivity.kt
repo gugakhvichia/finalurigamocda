@@ -1,27 +1,34 @@
 package com.example.finalurigamocda
 
-
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
-import android.widget.SeekBar
-import android.widget.TextView
-import java.util.*
+import android.widget.EditText
+import android.widget.Toast
 
+lateinit var username : EditText
+lateinit var password : EditText
+lateinit var login : Button
 
-class MainActivity : AppCompatActivity() {
+class MainActivity2 : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        val generator = findViewById<Button>(R.id.GeneratorButton)
-        val result = findViewById<TextView>(R.id.ResultTextView)
-        val seekBar = findViewById<SeekBar>(R.id.SeekBar)
+        username = findViewById(R.id.usernameET)
+        password = findViewById(R.id.passwordET)
+        login = findViewById(R.id.loginBtn)
 
-        generator.setOnClickListener {
-            val rand = Random().nextInt(seekBar.progress)
-            result.text=rand.toString()
+        login.setOnClickListener {
+            if (username.getText().toString().equals("hello") && password.getText().toString().equals("world")){
+                val intent = Intent(this,MainActivity2::class.java)
+                startActivity(intent)
+
+            }else{
+                Toast.makeText(this, "Username or Password is Incorrect", Toast.LENGTH_LONG).show()
+
+            }
         }
-
     }
 }

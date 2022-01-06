@@ -11,7 +11,7 @@ lateinit var username : EditText
 lateinit var password : EditText
 lateinit var login : Button
 
-class MainActivity2 : AppCompatActivity() {
+class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -23,6 +23,7 @@ class MainActivity2 : AppCompatActivity() {
         login.setOnClickListener {
             if (username.getText().toString().equals("hello") && password.getText().toString().equals("world")){
                 val intent = Intent(this,MainActivity2::class.java)
+                finish()
                 startActivity(intent)
 
             }else{

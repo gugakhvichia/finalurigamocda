@@ -10,7 +10,7 @@ import android.widget.TextView
 import java.util.*
 
 
-class MainActivity : AppCompatActivity() {
+class MainActivity3 : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main3)
@@ -25,8 +25,9 @@ class MainActivity : AppCompatActivity() {
             result.text=rand.toString()
         }
         back.setOnClickListener {
-            val intent = Intent(this,MainActivity::class.java)
-            startActivity(intent)
+            val intent3 = Intent(this,MainActivity::class.java)
+            finish()
+            startActivity(intent3)
         }
     }
 }
